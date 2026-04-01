@@ -1,0 +1,231 @@
+:root {
+    --primary-color: #ECC5C6; /* rosa pastel */
+    --dark-color: #837D68;   /* oliva acinzentado */
+    --light-bg: #F5E9E7;     /* bege rosado claro */
+    --white: #C1C0C2;        /* cinza claro */
+    --accent: #8A9DB1;       /* azul pastel */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    color: var(--dark-color);
+}
+
+header {
+    background-color: var(--white);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+nav ul {
+    display: flex;       
+    list-style: none;    
+    gap: 20px;           
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+section {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#sobre {
+    margin-top: 60px;
+
+}
+
+.sobre-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.sobre-texto {
+    flex: 2;
+    text-align: center;
+    font-size: 1.35rem;
+    line-height: 1.8;
+}
+
+.sobre-foto {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sobre-foto img {
+    width: 240px;
+    height: 240px;
+    border-radius: 24px;
+    border: 6px solid var(--white);
+    object-fit: cover;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+}
+
+@media (max-width: 900px) {
+    .sobre-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+    }
+    .sobre-texto {
+        text-align: center;
+    }
+    .sobre-foto {
+        justify-content: center;
+    }
+    .sobre-foto img {
+        width: 180px;
+        height: 180px;
+        border-width: 4px;
+        border-radius: 18px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    }
+}
+
+h2 {
+    text-align: center; 
+    margin-bottom: 30px;
+}
+
+.projetos-container {
+    display: flex;            
+    flex-wrap: wrap;          
+    justify-content: center;  
+    gap: 25px;                
+    margin-top: 30px;
+}
+
+.card-projeto {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);    
+    flex: 1 1 300px;    
+    max-width: 400px;
+}
+
+form {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 16px;      
+    max-width: 550px;
+    margin: 40px auto;        
+    display: flex;            
+    flex-direction: column;   
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+}
+
+#contato h2 {
+    margin-bottom: 30px;
+    color: var(--dark-color);
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;       
+}
+
+form label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+form input, form textarea {
+    padding: 14px;
+    border: 2px solid #edf2f7;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #f8fafc;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+form button:hover {
+    background-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(138, 157, 177, 0.2);
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; 
+        padding: 1rem;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        gap: 15px;
+    }
+
+    .card-projeto {
+        flex-basis: 100%; 
+    }
+}
+
+#btn-tema {
+    padding: 5px 12px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+body.dark-theme {
+    --light-bg: #8A9DB1;   /* azul pastel */
+    --dark-color: #F5E9E7; /* bege rosado claro */
+    --white: #C1C0C2;      /* cinza claro */
+    --primary-color: #837D68; /* oliva acinzentado */
+    --accent: #ECC5C6;     /* rosa pastel */
+}
+
+body.dark-theme footer {
+    background-color: var(--primary-color);
+    color: var(--light-bg);
+}
