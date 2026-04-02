@@ -37,12 +37,15 @@ const meusProjetos = [
     {
         titulo: "Projeto 01 - Portfólio em HTML, CSS e JS",
         descricao: "Meu portfólio de apresentação feito com tecnologias modernas.",
-        link: "https://github.com/pedroalex/ecommerce"
+        links: [
+            { label: "Ver no GitHub Pages", url: "https://mariagomessilvatsi-afk.github.io/portfolio-uespi-html-css-js/" },
+            { label: "Ver repositório no GitHub", url: "https://github.com/mariagomessilvatsi-afk/portfolio-uespi-html-css-js" }
+        ]
     },
     {
         titulo: "Projeto 02 - Portfólio com React",
         descricao: "Meu portfólio de apresentação feito com React, uma biblioteca JavaScript para construção de interfaces de usuário.",
-        link: "https://github.com/pedroalex/portfolio"
+        link: "https://mariagomessilvatsi-afk.github.io/portfolio-uespi-html-css-js/"
     }
 ];
 
@@ -52,11 +55,17 @@ function renderizarProjetos() {
     container.innerHTML = "";
 
     meusProjetos.forEach(projeto => {
+        let linksHTML = "";
+        if (projeto.links) {
+            linksHTML = projeto.links.map(l => `<a href="${l.url}" target="_blank">${l.label}</a>`).join("<br>");
+        } else if (projeto.link) {
+            linksHTML = `<a href="${projeto.link}" target="_blank">Ver no GitHub</a>`;
+        }
         const cardHTML = `
             <article class="card-projeto">
                 <h3>${projeto.titulo}</h3>
                 <p>${projeto.descricao}</p>
-                <a href="${projeto.link}" target="_blank">Ver no GitHub</a>
+                ${linksHTML}
             </article>
         `;
         container.innerHTML += cardHTML;
