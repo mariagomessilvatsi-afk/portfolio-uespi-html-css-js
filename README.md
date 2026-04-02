@@ -46,7 +46,7 @@ O portfólio está disponível via GitHub Pages: [Acesse aqui](https://mariagome
 
 ## Contato
 - **E-mail:** mariagomessilva.tsi@gmail.com
-- **LinkedIn:** [Seu LinkedIn aqui]
+
 
 ---
 <p align="center">Feito por Maria Silva</p>
