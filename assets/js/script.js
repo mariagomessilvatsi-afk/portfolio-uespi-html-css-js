@@ -1,7 +1,7 @@
 const formulario = document.querySelector('#meu-formulario');
 
 function validarFormulario(event) {
-    event.preventDefault(); 
+    event.preventDefault();
 
     const nome = document.querySelector('#nome').value;
     const email = document.querySelector('#email').value;
@@ -11,7 +11,7 @@ function validarFormulario(event) {
         alert("Por favor, preencha todos os campos antes de enviar.");
     } else {
         alert(`Obrigado, ${nome}! Sua mensagem foi enviada com sucesso.`);
-        formulario.reset(); 
+        formulario.reset();
     }
 }
 
@@ -22,8 +22,8 @@ const body = document.body;
 
 function alternarTema() {
     body.classList.toggle('dark-theme');
-    
-    // Altera o texto do botão conforme o tema
+
+    // Altera o texto do botao conforme o tema.
     if (body.classList.contains('dark-theme')) {
         btnTema.innerText = "Claro";
     } else {
@@ -35,23 +35,26 @@ btnTema.addEventListener('click', alternarTema);
 
 const meusProjetos = [
     {
-        titulo: "Projeto 01 - Portfólio em HTML, CSS e JS",
-        descricao: "Meu portfólio de apresentação feito com tecnologias modernas.",
+        titulo: "Projeto 01 - Portfolio em HTML, CSS e JS",
+        descricao: "Meu portfolio de apresentacao feito com tecnologias modernas.",
         links: [
             { label: "Ver no GitHub Pages", url: "https://mariagomessilvatsi-afk.github.io/portfolio-uespi-html-css-js/" },
-            { label: "Ver repositório no GitHub", url: "https://github.com/mariagomessilvatsi-afk/portfolio-uespi-html-css-js" }
+            { label: "Ver repositorio no GitHub", url: "https://github.com/mariagomessilvatsi-afk/portfolio-uespi-html-css-js" }
         ]
     },
     {
-        titulo: "Projeto 02 - Portfólio com React",
-        descricao: "Meu portfólio de apresentação feito com React, uma biblioteca JavaScript para construção de interfaces de usuário.",
-        link: "https://mariagomessilvatsi-afk.github.io/portfolio-uespi-html-css-js/"
+        titulo: "Projeto 02 - Portfolio com React",
+        descricao: "Meu portfolio de apresentacao feito com React, uma biblioteca JavaScript para construcao de interfaces de usuario.",
+        links: [
+            { label: "Ver deploy na Vercel", url: "https://meu-portfolio-react-gold.vercel.app/" },
+            { label: "Ver repositorio no GitHub", url: "https://github.com/mariagomessilvatsi-afk/meu-portfolio-react" }
+        ]
     }
 ];
 
 function renderizarProjetos() {
     const container = document.querySelector('.projetos-container');
-    
+
     container.innerHTML = "";
 
     meusProjetos.forEach(projeto => {
