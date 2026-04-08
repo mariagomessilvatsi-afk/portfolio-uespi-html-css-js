@@ -23,7 +23,7 @@ const body = document.body;
 function alternarTema() {
     body.classList.toggle('dark-theme');
 
-    // Altera o texto do botao conforme o tema.
+    // Altera o texto do botão conforme o tema.
     if (body.classList.contains('dark-theme')) {
         btnTema.innerText = "Claro";
     } else {
@@ -35,19 +35,19 @@ btnTema.addEventListener('click', alternarTema);
 
 const meusProjetos = [
     {
-        titulo: "Projeto 01 - Portfolio em HTML, CSS e JS",
-        descricao: "Meu portfolio de apresentacao feito com tecnologias modernas.",
+        titulo: "Projeto 01 - Portfólio em HTML, CSS e JS",
+        descricao: "Meu portfólio de apresentação, feito com tecnologias modernas.",
         links: [
             { label: "Ver no GitHub Pages", url: "https://mariagomessilvatsi-afk.github.io/portfolio-uespi-html-css-js/" },
-            { label: "Ver repositorio no GitHub", url: "https://github.com/mariagomessilvatsi-afk/portfolio-uespi-html-css-js" }
+            { label: "Ver repositório no GitHub", url: "https://github.com/mariagomessilvatsi-afk/portfolio-uespi-html-css-js" }
         ]
     },
     {
-        titulo: "Projeto 02 - Portfolio com React",
-        descricao: "Meu portfolio de apresentacao feito com React, uma biblioteca JavaScript para construcao de interfaces de usuario.",
+        titulo: "Projeto 02 - Portfólio com React",
+        descricao: "Meu portfólio de apresentação, feito com React, uma biblioteca JavaScript para construção de interfaces de usuário.",
         links: [
             { label: "Ver deploy na Vercel", url: "https://meu-portfolio-react-gold.vercel.app/" },
-            { label: "Ver repositorio no GitHub", url: "https://github.com/mariagomessilvatsi-afk/meu-portfolio-react" }
+            { label: "Ver repositório no GitHub", url: "https://github.com/mariagomessilvatsi-afk/meu-portfolio-react" }
         ]
     }
 ];
@@ -57,13 +57,17 @@ function renderizarProjetos() {
 
     container.innerHTML = "";
 
-    meusProjetos.forEach(projeto => {
+    meusProjetos.forEach((projeto) => {
         let linksHTML = "";
+
         if (projeto.links) {
-            linksHTML = projeto.links.map(l => `<a href="${l.url}" target="_blank">${l.label}</a>`).join("<br>");
+            linksHTML = projeto.links
+                .map((l) => `<a href="${l.url}" target="_blank" rel="noopener noreferrer">${l.label}</a>`)
+                .join("<br>");
         } else if (projeto.link) {
-            linksHTML = `<a href="${projeto.link}" target="_blank">Ver no GitHub</a>`;
+            linksHTML = `<a href="${projeto.link}" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>`;
         }
+
         const cardHTML = `
             <article class="card-projeto">
                 <h3>${projeto.titulo}</h3>
@@ -71,6 +75,7 @@ function renderizarProjetos() {
                 ${linksHTML}
             </article>
         `;
+
         container.innerHTML += cardHTML;
     });
 }
